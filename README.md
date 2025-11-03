@@ -37,7 +37,7 @@ _Cart Page_
 ## 🚀 Getting Started
 
 ```bash
-### 1. Clone the repo
+1. Clone the repo
 git clone https://github.com/yourusername/shop-n-enjoy.git
 cd shop-n-enjoy
 
