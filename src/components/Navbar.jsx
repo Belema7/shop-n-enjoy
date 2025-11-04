@@ -25,7 +25,7 @@ const Navbar = () => {
                   item === "Home"
                     ? "/"
                     : item === "Products"
-                    ? "/productdetails"
+                    ? "/productdetails/:id"
                     : `/${item.toLowerCase()}`
                 }
                 className={({ isActive }) =>
