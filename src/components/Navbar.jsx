@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "../context/CartContext"; // import cart context
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { cart } = useCart(); // get cart state
 
   const menuItems = ["Home", "Cart", "Checkout"];
+
+  // calculate total items in cart
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -39,9 +44,9 @@ const Navbar = () => {
         {/* Cart Button (Desktop) */}
         <NavLink
           to="/cart"
-          className="hidden md:block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200"
+          className="hidden md:flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200"
         >
-          🛒 View Cart
+          🛒 Cart: {totalItems}
         </NavLink>
 
         {/* Mobile Menu Button */}
@@ -73,7 +78,7 @@ const Navbar = () => {
                         isActive ? "text-indigo-600 font-semibold" : ""
                       }`
                     }
-                    onClick={() => setIsOpen(false)} // close menu after click
+                    onClick={() => setIsOpen(false)}
                   >
                     {item}
                   </NavLink>
@@ -81,10 +86,10 @@ const Navbar = () => {
               ))}
               <NavLink
                 to="/cart"
-                className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200"
+                className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                🛒 View Cart
+                🛒 Cart: {totalItems}
               </NavLink>
             </ul>
           </motion.div>
