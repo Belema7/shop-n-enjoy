@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       {/* <Navbar/> */}
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/cart' element={<Cart/>} />
@@ -18,7 +18,7 @@ const App = () => {
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </div>
   )
 }

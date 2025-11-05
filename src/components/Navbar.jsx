@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Updated menu — removed ProductDetails
   const menuItems = ["Home", "Cart", "Checkout"];
 
   return (
