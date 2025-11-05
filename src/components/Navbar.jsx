@@ -6,7 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = ["Home", "Cart", "Products", "Checkout"];
+  // Updated menu — removed ProductDetails
+  const menuItems = ["Home", "Cart", "Checkout"];
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -21,13 +22,7 @@ const Navbar = () => {
           {menuItems.map((item) => (
             <li key={item}>
               <NavLink
-                to={
-                  item === "Home"
-                    ? "/"
-                    : item === "Products"
-                    ? "/productdetails/:id"
-                    : `/${item.toLowerCase()}`
-                }
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 className={({ isActive }) =>
                   `hover:text-indigo-600 transition duration-200 ${
                     isActive
@@ -43,9 +38,12 @@ const Navbar = () => {
         </ul>
 
         {/* Cart Button (Desktop) */}
-        <button className="hidden md:block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">
+        <NavLink
+          to="/cart"
+          className="hidden md:block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200"
+        >
           🛒 View Cart
-        </button>
+        </NavLink>
 
         {/* Mobile Menu Button */}
         <button
@@ -70,13 +68,7 @@ const Navbar = () => {
               {menuItems.map((item) => (
                 <li key={item}>
                   <NavLink
-                    to={
-                      item === "Home"
-                        ? "/"
-                        : item === "Products"
-                        ? "/productdetails"
-                        : `/${item.toLowerCase()}`
-                    }
+                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     className={({ isActive }) =>
                       `hover:text-indigo-600 transition duration-200 ${
                         isActive ? "text-indigo-600 font-semibold" : ""
@@ -88,9 +80,13 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               ))}
-              <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200">
+              <NavLink
+                to="/cart"
+                className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-200"
+                onClick={() => setIsOpen(false)}
+              >
                 🛒 View Cart
-              </button>
+              </NavLink>
             </ul>
           </motion.div>
         )}

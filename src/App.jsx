@@ -5,7 +5,6 @@ import Cart from './pages/Cart'
 import ProductDetails from './pages/ProductDetails'
 import Checkout from './pages/Checkout'
 import NotFound from './pages/NotFound'
-import Navbar from './components/Navbar'
 
 const App = () => {
   return (
