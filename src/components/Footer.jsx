@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
                 {/* <FaShoppingBag className="text-white text-lg" /> */}
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6 text-2xl">
               <a
-                href="https://x.com/"
+                href="https://x.com/BelemaGr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
@@ -34,7 +34,7 @@ const Footer = () => {
                 <FaXTwitter />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://linkedin.com/BelemaGr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
@@ -42,7 +42,7 @@ const Footer = () => {
                 <FaLinkedin />
               </a>
               <a
-                href="https://github.com/"
+                href="https://github.com/Belema7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
