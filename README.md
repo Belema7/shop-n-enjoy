@@ -27,10 +27,10 @@ It simulates a real-world shopping experience — browse products, add to cart, 
 ## 📸 Screenshots
 
 _Hero Section + Product Grid_  
-![Home Page](./src/assets/images/home-screenshot.png)
+![Home Page](./src/assets/images/home.png)
 
 _Cart Page_  
-![Cart Page](./src/assets/images/cart-screenshot.png)
+![Cart Page](./src/assets/images/cartpage.png)
 
 ---
 
