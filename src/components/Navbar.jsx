@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { cart } = useCart();
 
-  const menuItems = ["Home", "Cart", "Checkout"];
+  const menuItems = ["Home","Products", "Cart", "Checkout"];
 
   // calculate total items in cart
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);

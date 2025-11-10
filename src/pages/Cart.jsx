@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
 import { Trash2, Plus, Minus, ArrowLeft, Truck } from "lucide-react";
 
+
 const Cart = () => {
   const { cart, dispatch } = useCart();
 
@@ -18,6 +19,7 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
+      
       <div className="min-h-screen bg-gray-900">
         <Navbar />
         <div className="flex flex-col items-center justify-center min-h-[70vh] p-6 text-center">
@@ -30,7 +32,7 @@ const Cart = () => {
           </p>
           <Link
             to="/"
-            className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-8 py-4 rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-200 font-semibold shadow-lg hover:shadow-cyan-500/25"
+            className="bg-linear-to-r from-cyan-600 to-blue-600 text-white px-8 py-4 rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-200 font-semibold shadow-lg hover:shadow-cyan-500/25"
           >
             Start Shopping
           </Link>
@@ -44,9 +46,9 @@ const Cart = () => {
       <Navbar />
       <div className="max-w-7xl mx-auto p-6">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="md:flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-linear-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
               <span className="text-xl">🛒</span>
             </div>
             <div>
