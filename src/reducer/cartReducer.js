@@ -1,18 +1,17 @@
-const CartReducer = (state, action) => {
+// src/reducer/CartReducer.js
+export const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      { const existingItem = state.find(item => item.id === action.payload.id);
+      const existingItem = state.find(item => item.id === action.payload.id);
       if (existingItem) {
-        // If product exists, increase quantity
         return state.map(item =>
           item.id === action.payload.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        // If new product, add with quantity = 1
         return [...state, { ...action.payload, quantity: 1 }];
-      } }
+      }
 
     case "REMOVE_FROM_CART":
       return state.filter(item => item.id !== action.payload.id);
@@ -39,4 +38,4 @@ const CartReducer = (state, action) => {
   }
 };
 
-export default CartReducer;
+export const initialState = [];

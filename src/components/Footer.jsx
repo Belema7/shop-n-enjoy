@@ -16,7 +16,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-linear-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
                 {/* <FaShoppingBag className="text-white text-lg" /> */}
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 ShopNEnjoy
               </span>
             </Link>

@@ -1,16 +1,15 @@
+// src/context/CartContext.jsx
 import React, { createContext, useReducer, useContext, useEffect } from "react";
-import CartReducer from "../reducer/CartReducer";
+import { cartReducer, initialState } from "../reducer/CartReducer";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, dispatch] = useReducer(CartReducer, [], () => {
-    // Initialize from localStorage
+  const [cart, dispatch] = useReducer(cartReducer, initialState, () => {
     const localData = localStorage.getItem("cart");
-    return localData ? JSON.parse(localData) : [];
+    return localData ? JSON.parse(localData) : initialState;
   });
 
-  // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -22,5 +21,4 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Custom hook for easy access
 export const useCart = () => useContext(CartContext);
